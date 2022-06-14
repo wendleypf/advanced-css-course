@@ -1,8 +1,57 @@
-/*
-COLORS:
+@import "reset.css";
+@import "variables.css";
+@import "animation.css";
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+            to right bottom,
+            var(--light-green-opacity),
+            var(--dark-green-opacity)),
+            url("../img/hero.jpg");
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+}
 
-*/
+.logo {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+}
+
+.logo__image {
+    height: 2.25rem;
+}
+
+.heading {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading__primary {
+    color: white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+}
+
+.heading__primary--main {
+    display: block;
+    font-size: 3.75rem;
+    font-weight: 400;
+    letter-spacing: 2.25rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.heading__primary--sub {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    animation: moveInRight 1s ease-out; /* simplify props animation */
+}
